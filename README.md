@@ -10,7 +10,7 @@ This repository contains a Python script designed to simulate the remainder of S
 
 ## Requirements
 
-- Python 3.x
+- Python 3
 - NumPy
 - Pandas
 - Matplotlib
