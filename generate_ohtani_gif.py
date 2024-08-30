@@ -111,6 +111,6 @@ if images:
         output_gif,
         save_all=True,
         append_images=images[1:],
-        duration=100,  # Duration of each frame in milliseconds
-        loop=0         # Number of loops (0 for infinite)
+        duration=100,
+        loop=0 
     )
