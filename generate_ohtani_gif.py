@@ -46,8 +46,8 @@ def update_plot(i):
 
     #Plot the histogram of the results
     plt.figure(figsize=(8, 8))
-    plt.hist2d(simulated_home_runs, simulated_sb, bins=[60, 60], range=[[10, 70], [10, 70]], cmap='Reds', density=True)
-    
+    plt.hist2d(simulated_home_runs, simulated_sb, bins=[70, 70], range=[[0, 70], [0, 70]], cmap='Reds', density=True)
+    #print(np.max(np.histogram2d(simulated_home_runs, simulated_sb, bins=[70, 70], range=[[0, 70], 10, 70]], density=True)[0]))
     # Calculate probabilities for each club
     prob_30_30 = 100*np.mean((simulated_home_runs >= 30) & (simulated_sb >= 30))
     prob_40_40 = 100*np.mean((simulated_home_runs >= 40) & (simulated_sb >= 40))
@@ -69,7 +69,7 @@ def update_plot(i):
     if not os.path.exists('Frames'):
         os.makedirs('Frames')
     plt.savefig(f'Frames/frame_{i:04d}.png')
-    if(i==len(ohtani_stats)+1):
+    if(i==len(ohtani_stats)-1):
         for j in range(50):
           plt.savefig(f'Frames/frame_{(i+j+1):04d}.png')  
     plt.close()
@@ -111,6 +111,6 @@ if images:
         output_gif,
         save_all=True,
         append_images=images[1:],
-        duration=100,
-        loop=0 
+        duration=100,  # Duration of each frame in milliseconds
+        loop=0         # Number of loops (0 for infinite)
     )
