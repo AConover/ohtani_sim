@@ -69,7 +69,7 @@ def update_plot(i):
     if not os.path.exists('Frames'):
         os.makedirs('Frames')
     plt.savefig(f'Frames/frame_{i:04d}.png')
-    if(i==0):plt.savefig(f'Frames/frame_1000}.png')  #Add a frame at the end to ensure proper looping
+    if(i==0):plt.savefig(f'Frames/frame_1000.png')  #Add a frame at the end to ensure proper looping
     if(i==len(ohtani_stats)-1):
         for j in range(50):
           plt.savefig(f'Frames/frame_{(i+j+1):04d}.png')  
